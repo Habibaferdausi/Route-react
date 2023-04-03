@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./SingleData.css";
 
 const Singledata = (singledata) => {
   console.log(singledata);
   const { email, name, id, phone } = singledata.singledata;
 
   return (
-    <div>
-      <h1>Email:{email}</h1>
-      <h2>Name : {name}</h2>
-      <h3>Id:{id}</h3>
-      <h4>Number:{phone}</h4>
+    <div className="about">
+      <p>Email:{email}</p>
+      <p>Name : {name}</p>
+      <p>Id:{id}</p>
+      <p>Number:{phone}</p>
       <p>
         <Link to={`/singledata/${id}`}>Show me details</Link>
       </p>

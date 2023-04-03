@@ -8,6 +8,7 @@ import About from "./Component/About";
 import Contract from "./Component/Contract";
 import Home from "./Component/Home";
 import FriendDetails from "./Component/friendDetails";
+import Path from "./Component/Path";
 
 //const router = createBrowserRouter([
 // {
@@ -39,6 +40,13 @@ const router = createBrowserRouter([
         path: "contract",
         element: <Contract></Contract>,
       },
+
+      {
+        path: "path",
+        element: <Path></Path>,
+        loader: () => fetch("https:jsonplaceholder.typicode.com/posts"),
+      },
+
       {
         path: "singledata/:singledataId",
         element: <FriendDetails></FriendDetails>,
