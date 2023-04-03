@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./Component/About";
 import Contract from "./Component/Contract";
 import Home from "./Component/Home";
+import FriendDetails from "./Component/friendDetails";
 
 //const router = createBrowserRouter([
 // {
@@ -32,10 +33,19 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About></About>,
+        loader: () => fetch("https:jsonplaceholder.typicode.com/users"),
       },
       {
         path: "contract",
         element: <Contract></Contract>,
+      },
+      {
+        path: "singledata/:singledataId",
+        element: <FriendDetails></FriendDetails>,
+        loader: ({ params }) =>
+          fetch(
+            `https:jsonplaceholder.typicode.com/users/${params.singledataId}`
+          ),
       },
     ],
   },
